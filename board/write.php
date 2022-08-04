@@ -24,14 +24,13 @@
             <div>
                 <input type="text" id="writer" name="writer" value="" placeholder="작성자를 입력하세요" />
             </div>
-            <div>옵션</div>
+            <div>내용</div>
             <div>
-                <input type="checkbox"id="options_1" name="options[]" value="제목옵션1"/> 제목옵션1
-                <br>
-                <input type="checkbox"id="options_2" name="options[]" value="제목옵션2"/> 제목옵션2
-                <br>
-                <input type="checkbox"id="options_3" name="options[]" value="제목옵션3"/> 제목옵션3
-                <br>
+                <textarea name="content" cols="200" rows="50" style="width:90%;height:200px;"></textarea>
+            </div>
+            <div>비밀번호</div>
+            <div>
+                <input type="password" id="pwd" name="pwd" value="" placeholder="비밀번호" />
             </div>
             <div>
                 <input type="submit" value="전송" />

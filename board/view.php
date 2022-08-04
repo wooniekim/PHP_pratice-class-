@@ -9,7 +9,7 @@ if($idx == '0'){
 }
 
 // 게시물 가져오기
-$stmt = $db->prepare("SELECT * FROM board WHERE idx=:idx;");
+$stmt = $db->prepare("SELECT * FROM " . $_site_options['board']['tableName'] ." WHERE idx=:idx;");
 $stmt->bindValue(':idx', $idx);
 $stmt->execute();
 
@@ -32,6 +32,13 @@ $db = null;
 <head>
     <meta charset="UTF-8">
     <title>상세보기</title>
+    <script>
+        function del() {
+            if(confirm('정말 삭제하시겠습니까?')){
+                location.href='<?=$_site_options['board']['delPage']?>?idx=<?=$idx?>'
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>게시물 상세보기</h1>
@@ -39,8 +46,8 @@ $db = null;
     <div>
         <a href="/board/">목록</a>
         <?php if($error == 0) {?>
-        <a href="modify.php?idx=<?=$idx?>">수정</a>
-        <a href="del.php?idx=<?=$idx?>">삭제</a>
+        <a href="<?=$_site_options['board']['modifyPage']?>?idx=<?=$idx?>">수정</a>
+        <a href="#" onclick="del();return false;">삭제</a>
         <?php } ?>
     </div>
 </body>
