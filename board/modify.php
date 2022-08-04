@@ -3,7 +3,7 @@
 $idx = get('idx', '0');
 if($idx == '0'){
     ?>
-    <script>alert('잘못된 접근입니다'); location.href='/board/';</script>
+    <script>alert('잘못된 접근입니다'); location.href='<?=$_site_options['board']['listPage']?>';</script>
     <?php
     return;
 }
@@ -20,7 +20,7 @@ if($row = $stmt->fetch(PDO::FETCH_BOTH)){
 } else {
     $error += 1;
 ?>
-    <script>alert('잘못된 접근입니다'); location.href='/board/';</script>
+    <script>alert('잘못된 접근입니다'); location.href='<?=$_site_options['board']['listPage']?>';</script>
 <?php
     return;
 }
@@ -38,7 +38,7 @@ $db = null;
 <body>
     <h1>수정</h1>
     <div>
-        <form action="modify_ok.php" method="post">
+        <form action="<?=$_site_options['board']['modifyOkPage']?>" method="post">
         <input type="hidden" name="idx" value="<?=$idx?>"/>
             <div>공지글</div>
             <div>

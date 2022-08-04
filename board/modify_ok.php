@@ -3,7 +3,7 @@
 $idx = post('idx', '0');
 if($idx == '0'){
     ?>
-    <script>alert('잘못된 접근입니다'); location.href='/board/';</script>
+    <script>alert('잘못된 접근입니다'); location.href='<?=$_site_options['board']['listPage']?>';</script>
     <?php
     return;
 }

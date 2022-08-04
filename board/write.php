@@ -1,3 +1,4 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/_inc/common.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,8 @@
         <!-- submit버튼을 누르면 action쪽으로 입력받은 것을 가지고 감 -->
         <!-- post요청은 선물처럼 포장해서 감 -->
         <!-- payload는 body -->
-        <form action="write_ok.php" method="post">
+        <!-- writeOkPage -->
+        <form action="<?=$_site_options['board']['writeOkPage']?>" method="post">
             <div>공지글</div>
             <div>
                 <input type="checkbox"id="isNotice" name="isNotice" value="y"/>
