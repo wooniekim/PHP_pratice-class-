@@ -11,7 +11,7 @@ $db = new PDO($dbConnectionString, DB_LOGIN_ID, DB_LOGIN_PWD);
 
 $_site_options = [
     "board" => [
-        "name" => "영진 자게",
+        "name" => "자게",
         "tableName" => "board",
         "listPage" => "/board/index.php",
         "writePage" => "/board/write.php",
@@ -21,5 +21,10 @@ $_site_options = [
         "modifyOkPage" => "/board/modify_ok.php",
         "delPage" => "/board/del.php",
     ],
+    "faq" => [
+        "name" => "자주하는 질문",
+        "tableName" => "faq1",
+    ],
 ];
+$_board_options = $_site_options['board'];
 ?>
